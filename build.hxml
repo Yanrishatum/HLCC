@@ -1,0 +1,8 @@
+-cp .
+-lib hxml_parser
+-main HLCompilerCLI
+--each
+-hl hlcc.hl
+--next
+-D hlc
+-hl bin/hlcc.c
