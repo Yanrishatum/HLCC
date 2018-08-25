@@ -74,9 +74,8 @@ class HLCompilerCLI
           test = Path.join([path, file]);
           if (FileSystem.exists(test))
           {
-            // compiler.compileHxml(test);
-            // Sys.exit(0);
-            handleError("Found HXML, but HXML parsing not yet supported");
+            compiler.compileHxml(test);
+            Sys.exit(0);
           }
         }
       }
@@ -90,7 +89,8 @@ class HLCompilerCLI
         }
         if (p.ext == "hxml")
         {
-          handleError("Found HXML, but HXML parsing not yet supported");
+          compiler.compileHxml(path);
+          Sys.exit(0);
         }
       }
     }

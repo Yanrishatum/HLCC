@@ -340,7 +340,6 @@ class HLCompiler
     var hxmlPath:String = path;
     base.resolveIncludes(Path.directory(path));
     base.resolveLibraries();
-    var found:Hxml = null;
     for(x in base.generateTargetHxmls())
     {
       var targets = x.getTargets();
@@ -348,21 +347,14 @@ class HLCompiler
       {
         if (t.target.indexOf("-hl") != -1 && StringTools.endsWith(t.path, ".c"))
         {
-          found = x;
-          srcPath = Path.directory(t.path);
-          mainName = Path.withoutDirectory(t.path);
-          output = Path.directory(t.path);
-          exeName = Path.withoutDirectory(Path.withExtension(t.path, "exe"));
-          break;
+          Sys.command("haxe", [hxmlPath]);
+          compileJson(Path.join([Path.directory(t.path), "hlc.json"]));
+          return;
         }
       }
-      if (found != null) break;
-    }
-    if (found == null)
-    {
-      error("Hxml file does not generate HL C code!");
     }
     
+    error("Hxml file does not generate HL C code!");
   }
   
   public function compile():Void
