@@ -18,6 +18,16 @@ A Hashlink tool to compile hlc output
 `hlcc -h` for available options  
 Doing `hlcc [options] <path-to-hlc.json>` should also work
 
+### A bit more detailed
+#### HXML-based
+* Make sure your hxml file contains generation of C source with `-hl path/to/sources.c`
+* Run `hlcc your-hxml-file.hxml` to compile app.
+#### Json-based
+* Compile your application into C sources
+* Navigate to output folder.
+* Run `hlcc hlc.json`
+
+
 ## Current status
 * Windows only
 * Probably does not work with HXML
