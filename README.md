@@ -13,6 +13,10 @@ A Hashlink tool to compile hlc output
 * run `haxe build.hxml`
 * run `hl hlcc.hl -j bin/hlc.json` to generate .exe file.
 
+## Downloads
+* MS Visual Studio 10 - http://download.microsoft.com/download/1/D/9/1D9A6C0E-FC89-43EE-9658-B9F0E3A76983/vc_web.exe
+* hxml_parser - Run:  `haxelib git hxml_parser https://github.com/Yanrishatum/hxml`
+
 ## Usage
 `hlcc [options]`  
 `hlcc -h` for available options  
